@@ -38,18 +38,27 @@ namespace Protocol.WebAPI.Models
                           .AsNoTracking()
                           .SingleOrDefaultAsync();
 
-        //public async Task<IEnumerable<Document>> FindPublished() =>
-        //    await _context.Documents
-        //                  .Where(d => d.isPublished == true)
-        //                  .Include(d => d.DocumentType)
-        //                  .Include(s => s.Sender)
-        //                  //.ThenInclude(sender => sender.AuthoritySender)
-        //                  .Include(a => a.Agreements)
-        //                    .ThenInclude(agreement => agreement.AuthorityAgreement)
-        //                  .AsNoTracking()
-        //                  .OrderByDescending(date => date.RegistrationDate)
-        //                  .AsNoTracking()
-        //                  .ToListAsync();
+        public async Task<IEnumerable<Document>> GetAllPublished() =>
+            await _context.Documents
+                          .Where(d => d.isProject == false)
+                          .Include(d => d.DocumentType)
+                          .Include(s => s.Sender)
+                          .Include(a => a.Agreements)
+                            .ThenInclude(agreement => agreement.AuthorityAgreement)                          
+                          .OrderByDescending(date => date.RegistrationDate)
+                          .AsNoTracking()
+                          .ToListAsync();
+
+        public async Task<IEnumerable<Document>> GetAllProjects() =>
+            await _context.Documents
+                  .Where(d => d.isProject == true)
+                  .Include(d => d.DocumentType)
+                  .Include(s => s.Sender)
+                  .Include(a => a.Agreements)
+                    .ThenInclude(agreement => agreement.AuthorityAgreement)
+                  .OrderByDescending(date => date.RegistrationDate)
+                  .AsNoTracking()
+                  .ToListAsync();
 
         public async Task AddDocument(Document document)
         {

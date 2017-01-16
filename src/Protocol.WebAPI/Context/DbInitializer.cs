@@ -74,8 +74,8 @@ namespace Protocol.WebAPI.Context
                 PublicationNumber = "78",
                 PublicationSignature = "Клименко С.И.",
                 isProject = false,
-                isApproved = false,
-                isPublished = true
+                isApproved = false
+                
             };
 
             var doc2 = new Document

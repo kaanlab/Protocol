@@ -30,7 +30,7 @@ namespace Protocol.WebAPI.Models
         public string PublicationSignature { get; set; }
         public string DocFile { get; set; }
         public string PdfFile { get; set; }
-        public bool isPublished { get; set; } = false;
+        //public bool isPublished { get; set; } = false;
 
         public DocumentType DocumentType { get; set; }
         public Sender Sender { get; set; }

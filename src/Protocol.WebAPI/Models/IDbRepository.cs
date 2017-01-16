@@ -10,7 +10,8 @@ namespace Protocol.WebAPI.Models
     {
         Task<IEnumerable<Document>> GetAllDocuments();
         Task<Document> FindDocument(int id);
-       // Task<IEnumerable<Document>> FindPublished();
+        Task<IEnumerable<Document>> GetAllPublished();
+        Task<IEnumerable<Document>> GetAllProjects();
         Task AddDocument(Document document);
         Task UpdateDocument(Document document);
         Task DeleteDocument(int id);

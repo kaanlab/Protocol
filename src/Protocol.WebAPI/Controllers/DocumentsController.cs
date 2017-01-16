@@ -26,12 +26,6 @@ namespace Protocol.WebAPI.Controllers
             return await _repository.GetAllDocuments();
         }
 
-        //[HttpGet]
-        //public async Task<IEnumerable<Document>> Get(string published)
-        //{
-        //    return await _repository.FindPublished();
-        //}
-
         // GET api/values/5
         [HttpGet("{id}", Name = "GetDocument")]
         public async Task<IActionResult> Get(int id)
