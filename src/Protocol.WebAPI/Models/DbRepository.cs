@@ -40,7 +40,7 @@ namespace Protocol.WebAPI.Models
 
         public async Task<IEnumerable<Document>> GetAllPublished() =>
             await _context.Documents
-                          .Where(d => d.isProject == false)
+                          .Where(d => d.IsProject == false)
                           .Include(d => d.DocumentType)
                           .Include(s => s.Sender)
                           .Include(a => a.Agreements)
@@ -51,7 +51,7 @@ namespace Protocol.WebAPI.Models
 
         public async Task<IEnumerable<Document>> GetAllProjects() =>
             await _context.Documents
-                  .Where(d => d.isProject == true)
+                  .Where(d => d.IsProject == true)
                   .Include(d => d.DocumentType)
                   .Include(s => s.Sender)
                   .Include(a => a.Agreements)

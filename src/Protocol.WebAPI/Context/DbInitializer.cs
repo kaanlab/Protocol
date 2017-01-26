@@ -49,6 +49,8 @@ namespace Protocol.WebAPI.Context
 
             var sender1 = new Sender { Name = "Министерство труда и занятости Республики Карелия" };
             var sender2 = new Sender { Name = "Министерство экономического развития Республики Карелия" };
+            var sender3 = new Sender { Name = "Министерство финансов Республики Карелия" };
+            var sender4 = new Sender { Name = "Министерство строительства Республики Карелия" };
 
             context.Senders.Add(sender1);
             context.Senders.Add(sender2);
@@ -73,8 +75,8 @@ namespace Protocol.WebAPI.Context
                 PublicationDate = new DateTime(2016, 12, 26),
                 PublicationNumber = "78",
                 PublicationSignature = "Клименко С.И.",
-                isProject = false,
-                isApproved = false
+                IsProject = false,
+                IsApproved = false
                 
             };
 
@@ -87,7 +89,7 @@ namespace Protocol.WebAPI.Context
                 ContactPhone = "799-267",
                 Sender = sender2,
                 ProjectDescription = "Важная информация 2",
-                isApproved = true,
+                IsApproved = true,
                 Agreements = new List<Agreement>
                 {
                     new Agreement { AuthorityAgreement = authAgr1, Date = new DateTime(2016, 11, 21), ReturnDate = new DateTime(2016, 11, 25), AgreementSignature = "Васечкин В.В." },
@@ -105,7 +107,7 @@ namespace Protocol.WebAPI.Context
                 ContactPhone = "799-267",
                 Sender = sender2,
                 ProjectDescription = "Важная информация 3",
-                isApproved = true,
+                IsApproved = true,
                 Agreements = new List<Agreement>
                 {
                     new Agreement { AuthorityAgreement = authAgr1, Date = new DateTime(2016, 10, 1), ReturnDate = new DateTime(2016, 10, 4), AgreementSignature = "Васечкин В.В." },
@@ -125,10 +127,79 @@ namespace Protocol.WebAPI.Context
                 ProjectDescription = "Важная информация 4"                
             };
 
+            var doc5 = new Document
+            {
+                RegistrationDate = new DateTime(2017, 01, 8),
+                ProjectNumber = "14-5",
+                DocumentType = docType2,
+                ContactName = "Сидоров С.П.",
+                ContactPhone = "736-245",
+                Sender = sender3,
+                ProjectDescription = "Важная информация 1",
+                Agreements = new List<Agreement>
+                {
+                    new Agreement { AuthorityAgreement = authAgr2, Date = new DateTime(2016, 12, 8), ReturnDate = new DateTime(2016, 12, 12), AgreementSignature = "Федоров И.И." },
+                    new Agreement { AuthorityAgreement = authAgr3, Date = new DateTime(2016, 12, 13), ReturnDate = new DateTime(2016, 12, 17), AgreementSignature = "Петров С.С." },
+                    new Agreement { AuthorityAgreement = authAgr4, Date = new DateTime(2016, 12, 18), ReturnDate = new DateTime(2016, 12, 21), AgreementSignature = "Сидоренко П.С." },
+                    new Agreement { AuthorityAgreement = authAgr5, Date = new DateTime(2016, 12, 22), ReturnDate = new DateTime(2016, 12, 25), AgreementSignature = "Зайцев В.Д." }
+                },
+                PublicationDate = new DateTime(2017, 01, 14),
+                PublicationNumber = "125-П",
+                PublicationSignature = "Клименко С.И.",
+                IsProject = false,
+                IsApproved = false
+
+            };
+
+            var doc6 = new Document
+            {
+                RegistrationDate = new DateTime(2016, 12, 24),
+                ProjectNumber = "14-6",
+                DocumentType = docType3,
+                ContactName = "Захаров И.В.",
+                ContactPhone = "736-156",
+                Sender = sender4,
+                ProjectDescription = "Важная информация 1",
+                Agreements = new List<Agreement>
+                {
+                    new Agreement { AuthorityAgreement = authAgr2, Date = new DateTime(2016, 12, 8), ReturnDate = new DateTime(2016, 12, 12), AgreementSignature = "Федоров И.И." },
+                    new Agreement { AuthorityAgreement = authAgr3, Date = new DateTime(2016, 12, 13), ReturnDate = new DateTime(2016, 12, 17), AgreementSignature = "Петров С.С." },
+                    new Agreement { AuthorityAgreement = authAgr4, Date = new DateTime(2016, 12, 18), ReturnDate = new DateTime(2016, 12, 21), AgreementSignature = "Сидоренко П.С." },
+                    new Agreement { AuthorityAgreement = authAgr5, Date = new DateTime(2016, 12, 22), ReturnDate = new DateTime(2016, 12, 25), AgreementSignature = "Зайцев В.Д." }
+                },
+                PublicationDate = new DateTime(2016, 12, 28),
+                PublicationNumber = "30-Пр",
+                PublicationSignature = "Клименко С.И.",
+                IsProject = false,
+                IsApproved = false
+
+            };
+
+            var doc7 = new Document
+            {
+                RegistrationDate = new DateTime(2016, 10, 15),
+                ProjectNumber = "14-1",
+                DocumentType = docType1,
+                ContactName = "Петров П.П.",
+                ContactPhone = "736-585",
+                Sender = sender1,
+                ProjectDescription = "Важная информация 1",
+                Agreements = new List<Agreement>
+                {
+                    new Agreement { AuthorityAgreement = authAgr2, Date = new DateTime(2016, 12, 8), ReturnDate = new DateTime(2016, 12, 12), AgreementSignature = "Федоров И.И." },
+                    new Agreement { AuthorityAgreement = authAgr3, Date = new DateTime(2016, 12, 13), ReturnDate = new DateTime(2016, 12, 17), AgreementSignature = "Петров С.С." },
+                    new Agreement { AuthorityAgreement = authAgr4, Date = new DateTime(2016, 12, 18), ReturnDate = new DateTime(2016, 12, 21), AgreementSignature = "Сидоренко П.С." },
+                    new Agreement { AuthorityAgreement = authAgr5, Date = new DateTime(2016, 12, 22), ReturnDate = new DateTime(2016, 12, 25), AgreementSignature = "Зайцев В.Д." }
+                }
+            };
+
             context.Documents.Add(doc1);
             context.Documents.Add(doc2);
             context.Documents.Add(doc3);
             context.Documents.Add(doc4);
+            context.Documents.Add(doc5);
+            context.Documents.Add(doc6);
+            context.Documents.Add(doc7);
             context.SaveChanges();
         }
     }

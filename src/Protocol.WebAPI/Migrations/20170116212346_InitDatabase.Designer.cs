@@ -8,7 +8,7 @@ using Protocol.WebAPI.Context;
 namespace Protocol.WebAPI.Migrations
 {
     [DbContext(typeof(ProtocolDbContext))]
-    [Migration("20170115182248_InitDatabase")]
+    [Migration("20170116212346_InitDatabase")]
     partial class InitDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,7 +66,11 @@ namespace Protocol.WebAPI.Migrations
 
                     b.Property<int>("DocumentTypeId");
 
-                    b.Property<string>("IcomingDocumentNumber");
+                    b.Property<string>("IncomingDocNumber");
+
+                    b.Property<bool>("IsApproved");
+
+                    b.Property<bool>("IsProject");
 
                     b.Property<string>("PdfFile");
 
@@ -83,12 +87,6 @@ namespace Protocol.WebAPI.Migrations
                     b.Property<DateTime>("RegistrationDate");
 
                     b.Property<int>("SenderId");
-
-                    b.Property<bool>("isApproved");
-
-                    b.Property<bool>("isProject");
-
-                    b.Property<bool>("isPublished");
 
                     b.HasKey("DocumentId");
 

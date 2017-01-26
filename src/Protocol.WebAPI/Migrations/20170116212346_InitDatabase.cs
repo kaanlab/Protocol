@@ -58,7 +58,9 @@ namespace Protocol.WebAPI.Migrations
                     ContactPhone = table.Column<string>(nullable: true),
                     DocFile = table.Column<string>(nullable: true),
                     DocumentTypeId = table.Column<int>(nullable: false),
-                    IcomingDocumentNumber = table.Column<string>(nullable: true),
+                    IncomingDocNumber = table.Column<string>(nullable: true),
+                    IsApproved = table.Column<bool>(nullable: false),
+                    IsProject = table.Column<bool>(nullable: false),
                     PdfFile = table.Column<string>(nullable: true),
                     ProjectDescription = table.Column<string>(nullable: true),
                     ProjectNumber = table.Column<string>(nullable: true),
@@ -66,10 +68,7 @@ namespace Protocol.WebAPI.Migrations
                     PublicationNumber = table.Column<string>(nullable: true),
                     PublicationSignature = table.Column<string>(nullable: true),
                     RegistrationDate = table.Column<DateTime>(nullable: false),
-                    SenderId = table.Column<int>(nullable: false),
-                    isApproved = table.Column<bool>(nullable: false),
-                    isProject = table.Column<bool>(nullable: false),
-                    isPublished = table.Column<bool>(nullable: false)
+                    SenderId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -15,14 +15,14 @@ namespace Protocol.WebAPI.Models
         public DateTime RegistrationDate { get; set; }
         public string ProjectNumber { get; set; }
         public string ProjectDescription { get; set; }
-        public bool isProject { get; set; } = true;
-        public string IcomingDocumentNumber { get; set; }
+        public bool IsProject { get; set; } = true;
+        public string IncomingDocNumber { get; set; }
         public string ContactName { get; set; }
         public string ContactPhone { get; set; }
 
 
         // Agreement
-        public bool isApproved { get; set; } = false;
+        public bool IsApproved { get; set; } = false;
 
         // Publication
         public DateTime? PublicationDate { get; set; }
