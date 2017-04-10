@@ -8,13 +8,13 @@ using Protocol.WebAPI.Context;
 namespace Protocol.WebAPI.Migrations
 {
     [DbContext(typeof(ProtocolDbContext))]
-    [Migration("20170116212346_InitDatabase")]
-    partial class InitDatabase
+    [Migration("20170410145134_InitDatbase")]
+    partial class InitDatbase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
+                .HasAnnotation("ProductVersion", "1.1.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Protocol.WebAPI.Models.Agreement", b =>

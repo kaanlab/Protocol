@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Protocol.WebAPI.Migrations
 {
-    public partial class InitDatabase : Migration
+    public partial class InitDatbase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
